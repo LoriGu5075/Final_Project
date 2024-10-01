@@ -53,6 +53,6 @@ These visualizations will help in understanding the connection between the indic
 Our test plan will follow a structured approach:
 
 Data Split: Split the dataset into 80% for training and 20% for testing the model’s performance.
-Time-Based Split: Given the time-series nature of stock data, train the model on earlier data (e.g., from 2015-2020) and test it on more recent data (e.g., 2021-2022) to assess how well the model generalizes.
+Time-Based Split: Given the time-series nature of stock data, train the model on earlier data (e.g., from 2017-2022) and test it on more recent data (e.g., 2022-2024) to assess how well the model generalizes.
 Cross-Validation: Use cross-validation during model training to avoid overfitting and to ensure robust model performance across different subsets of the data.
 By incorporating multiple indicators (MACD, KDJ, RSI), we aim to improve prediction accuracy and provide comprehensive insights into stock price trends.
