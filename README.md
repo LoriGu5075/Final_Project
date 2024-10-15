@@ -56,3 +56,23 @@ Data Split: Split the dataset into 80% for training and 20% for testing the mode
 Time-Based Split: Given the time-series nature of stock data, train the model on earlier data (e.g., from 2017-2022) and test it on more recent data (e.g., 2022-2024) to assess how well the model generalizes.
 Cross-Validation: Use cross-validation during model training to avoid overfitting and to ensure robust model performance across different subsets of the data.
 By incorporating multiple indicators (MACD, KDJ, RSI), we aim to improve prediction accuracy and provide comprehensive insights into stock price trends.
+
+
+
+**Feedback Improvements：**
+
+
+Prediction Horizon:
+
+We'll clarify that our main focus is on **short-term prediction horizons**, such as predicting the next day's price change / 4 hour changes. By defining the time frame more clearly, we aim to align expectations for model performance. We’ll also experiment with longer prediction windows (e.g., two-week or monthly predictions) for comparison, but the primary emphasis will be on daily and weekly forecasts.
+
+Handling Data Gaps and Missing Values: 
+
+We'll introduce a section on data preprocessing and cleaning. Since financial datasets often contain gaps (e.g., due to weekends, holidays, or incomplete trading days), we'll use techniques like:
+Forward/Backward Filling for missing days.
+Linear Interpolation for missing values within a trading period.
+
+Preventing Overfitting:
+We recognize that stock market trends change over time, so overfitting is a significant concern. Our strategy to combat this includes:
+Cross-validation: We'll use time-series cross-validation (e.g., walk-forward validation) to ensure our model generalizes well across different time periods.
+Regularization: Models like XGBoost and LSTM will be regularized to reduce the risk of overfitting to specific patterns in the training data.
