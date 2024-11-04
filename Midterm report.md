@@ -1,3 +1,5 @@
+**video link:https://youtu.be/QjzekUR48NQ**
+
 **Midterm Report: Analysis and Prediction of AAPL Stock Price Movements**
 
 **1. Preliminary Visualizations**
