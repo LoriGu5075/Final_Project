@@ -44,7 +44,7 @@ Accuracy: The model achieved an accuracy of approximately 0.48299319727891155% o
 Classification Report: The classification report shows precision, recall, and F1-scores for both classes (price increase and price decrease). The model performs reasonably well in predicting both classes, though additional tuning may improve these results.
 Buy/Sell Signals: The buy and sell signals generated from MACD crossovers align well with some of the model’s predictions, indicating potential for further backtesting and optimization.
 
-5. Next Steps
+**5. Next Steps**
 
 The main problem in our project is the accuracy is not good in enough, our final goal should make accuracy higher than 0.55~0.6. There are still many things to improve by change model. Also we can see a interesting thing that our buying signal and selling signal is extremely good in predicting stock price. I hope to incorporate these valuable features into the model to make more accurate predictions of stock price changes.
 
