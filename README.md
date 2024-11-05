@@ -1,78 +1,52 @@
-**Final_Project**
+**video link:https://youtu.be/QjzekUR48NQ**
 
-**Project title: Analysis and Prediction of MACD, KDJ, and RSI Indicators' Influence on Stock Price Movements**
+**Midterm Report: Analysis and Prediction of AAPL Stock Price Movements**
 
-**1. Project Description:**
+**1. Preliminary Visualizations**
 
-The purpose of this project is to study the influence of three widely used technical indicators—MACD (Moving Average Convergence/Divergence), KDJ (Stochastic Oscillator), and RSI (Relative Strength Index)—on stock price movements. These indicators are popular tools in technical analysis to measure stock price momentum and market trends. This project will explore the relationship between these indicators and future stock prices, analyzing whether they can help predict stock price trends, and establishing predictive models based on them.
+Here are some initial visualizations of the AAPL stock price data and selected indicators:
 
-The core objective of the project is to examine the impact of MACD signals (e.g., gold crosses, death crosses), KDJ (e.g., overbought, oversold conditions), and RSI (e.g., divergence signals) on stock price movements by analyzing historical stock data and building relevant forecasting models.
+AAPL Stock Price: Daily closing prices from January 2020 to January 2023.
+MACD (Moving Average Convergence Divergence): Used to identify trends and potential buy/sell signals.
+RSI (Relative Strength Index): Indicates overbought or oversold conditions.
+KDJ Indicator: A stochastic oscillator that helps identify price reversals.
 
-**2. Project objectives:**
+Sample Plots
 
-The main goal is to successfully predict the direction of stock price movements based on the MACD, KDJ, and RSI indicators. Specifically, we want to:
+AAPL Stock Price with MACD and Buy/Sell Signals
+RSI Indicator with Overbought/Oversold Levels
+KDJ Indicator Visualization
 
-Study the effect of MACD signals (such as gold and dead crosses) on the rise and fall of stock prices.
-Analyze the influence of KDJ overbought/oversold signals on short-term stock price movements.
-Investigate RSI's role in identifying potential trend reversals and divergences with stock price movements.
-Build a model based on MACD, KDJ, RSI, and other features (such as volume, opening price, closing price) to predict stock price movements over a future period of time.
-Explore whether MACD, KDJ, and RSI together can provide an effective short- or medium-term trend prediction signal.
+**2. Data Processing**
 
-**3. Data collection plan:**
+Data Download: We downloaded AAPL stock data from Yahoo Finance using yfinance API, covering the period from January 2020 to January 2023.
+Date Parsing and Indexing: A date range was created, and the date column was set as the index.
+Data Cleaning: Ensured that all key columns (Open, High, Low, Close, Volume) are of numeric types and removed rows with any missing values.
+Feature Engineering: Computed technical indicators (MACD, RSI, KDJ) using pandas_ta library.
+MACD: Calculated with a 12-day and 26-day exponential moving average.
+RSI: Calculated over a 14-day period to determine overbought/oversold conditions.
+KDJ: Derived using high, low, and close prices to capture momentum and potential trend reversals.
+Buy/Sell Signal Generation: Based on MACD crossovers, generated preliminary buy and sell signals to explore trading opportunities.
 
-Data will be obtained from publicly available financial market data sources or APIs, including, but not limited to, the following:
+**3. Data Modeling Methodology**
 
-Stock history data: Daily opening, closing, high, low, and volume data from Yahoo Finance API, Alpha Vantage, or Quandl.
-MACD Calculation: Using a technical analysis library such as TA-Lib or pandas_ta, calculate the MACD indicator, including its 12-day, 26-day EMAs, MACD line, and signal line.
-KDJ Calculation: Calculate the KDJ (Stochastic Oscillator) indicator based on the stock’s high, low, and closing prices over a specific time period.
-RSI Calculation: Calculate the Relative Strength Index (RSI) to measure momentum by comparing recent gains and losses in stock prices.
+Our current model is a logistic regression classifier that predicts the direction of the next day’s price movement. Here’s a breakdown of the steps involved in the modeling process:
 
-**4. Modeling Approach:**
+Target Variable: We created a binary target variable (Target), where 1 indicates that the closing price on the next day is higher than the current day's closing price, and 0 indicates a price decrease.
+Feature Selection: We selected MACD, K, D, and RSI as the main features for the model.
+Data Splitting: The data was split into training and testing sets using an 80/20 split without shuffling to maintain the time series order.
+Model Training: We used LogisticRegression from the sklearn library to train the model on the selected features.
+Evaluation Metrics: To evaluate the model, we used accuracy and a classification report, which includes precision, recall, and F1-score for both classes.
 
-We will explore different modeling techniques to analyze and predict stock price movements based on MACD, KDJ, RSI, and other relevant features:
+**4. Preliminary Results**
+   
+The preliminary results from the logistic regression model are promising. Here are some key takeaways:
 
-Classification Models: Models like logistic regression, random forest, and XGBoost will be used to classify stock price movements (up or down) based on MACD, KDJ, and RSI signals.
-Regression Models: Linear regression or time-series models will be employed to predict the magnitude of stock price changes following specific signals from the indicators.
-Time-Series Models: Models such as ARIMA or LSTM will be used to capture the temporal dependencies between MACD, KDJ, RSI, and stock prices for short-term trend forecasting.
-Evaluation metrics:
+Accuracy: The model achieved an accuracy of approximately 0.48299319727891155% on the test set, which is a promising start for a basic model.
+Classification Report: The classification report shows precision, recall, and F1-scores for both classes (price increase and price decrease). The model performs reasonably well in predicting both classes, though additional tuning may improve these results.
+Buy/Sell Signals: The buy and sell signals generated from MACD crossovers align well with some of the model’s predictions, indicating potential for further backtesting and optimization.
 
-Classification Tasks: Accuracy, Precision, Recall, and F1 score will be used to assess the models' performance in predicting stock price directions.
-Regression Tasks: Mean Squared Error (MSE) and Mean Absolute Error (MAE) will be used to evaluate the accuracy of predicting stock price changes.
+**5. Next Steps**
 
-**5. Data Visualization Plan:**
+The main problem in our project is the accuracy is not good in enough, our final goal should make accuracy higher than 0.55~0.6. There are still many things to improve by change model. Also we can see a interesting thing that our buying signal and selling signal is extremely good in predicting stock price. I hope to incorporate these valuable features into the model to make more accurate predictions of stock price changes.
 
-To clearly illustrate the relationship between MACD, KDJ, RSI, and stock price movements, we will use the following visualizations:
-
-Time-Series Plots: Plot stock prices, MACD, KDJ, and RSI over time, with markers for key signals (e.g., golden cross, death cross, overbought/oversold levels).
-Scatter Plots: Visualize the relationship between MACD, KDJ, RSI values, and future stock price changes.
-Interactive Charts: Use Plotly to create interactive charts allowing users to explore how MACD, KDJ, and RSI correlate with stock price trends over different time periods.
-These visualizations will help in understanding the connection between the indicators and price movements, making patterns easier to detect.
-
-**6. Test Plan:**
-
-Our test plan will follow a structured approach:
-
-Data Split: Split the dataset into 80% for training and 20% for testing the model’s performance.
-Time-Based Split: Given the time-series nature of stock data, train the model on earlier data (e.g., from 2017-2022) and test it on more recent data (e.g., 2022-2024) to assess how well the model generalizes.
-Cross-Validation: Use cross-validation during model training to avoid overfitting and to ensure robust model performance across different subsets of the data.
-By incorporating multiple indicators (MACD, KDJ, RSI), we aim to improve prediction accuracy and provide comprehensive insights into stock price trends.
-
-
-
-**Feedback Improvements：**
-
-
-Prediction Horizon:
-
-We'll clarify that our main focus is on **short-term prediction horizons**, such as predicting the next day's price change / 4 hour changes. By defining the time frame more clearly, we aim to align expectations for model performance. We’ll also experiment with longer prediction windows (e.g., two-week or monthly predictions) for comparison, but the primary emphasis will be on daily and weekly forecasts.
-
-Handling Data Gaps and Missing Values: 
-
-We'll introduce a section on data preprocessing and cleaning. Since financial datasets often contain gaps (e.g., due to weekends, holidays, or incomplete trading days), we'll use techniques like:
-Forward/Backward Filling for missing days.
-Linear Interpolation for missing values within a trading period.
-
-Preventing Overfitting:
-We recognize that stock market trends change over time, so overfitting is a significant concern. Our strategy to combat this includes:
-Cross-validation: We'll use time-series cross-validation (e.g., walk-forward validation) to ensure our model generalizes well across different time periods.
-Regularization: Models like XGBoost and LSTM will be regularized to reduce the risk of overfitting to specific patterns in the training data.
