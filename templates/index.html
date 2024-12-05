@@ -21,6 +21,25 @@
             <div id="rsi-chart"></div>
             <div id="kdj-chart"></div>
         </div>
+
+
+        <div id="prediction-section">
+            <h2>Stock Price Prediction</h2>
+            <button id="predict-button">Predict</button>
+            <div id="prediction-metrics">
+                <h3>Metrics</h3>
+                <table id="metrics-table">
+                    <!-- Populated dynamically -->
+                </table>
+            </div>
+            <div id="prediction-plots">
+                <h3>Confusion Matrix</h3>
+                <img id="confusion-matrix" alt="Confusion Matrix">
+                <h3>Strategy Performance</h3>
+                <img id="strategy-plot" alt="Strategy Performance">
+            </div>
+        </div>
+        
     </div>
     <script src="/static/script.js"></script>
 </body>

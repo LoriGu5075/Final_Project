@@ -85,6 +85,95 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
+
+/* Prediction Section Styling */
+#prediction-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#prediction-section h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+#predict-button {
+    display: block;
+    margin: 0 auto 20px auto;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#predict-button:hover {
+    background-color: #218838;
+}
+
+/* Metrics Table Styling */
+#prediction-metrics {
+    margin-top: 20px;
+}
+
+#metrics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#metrics-table th, #metrics-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#metrics-table th {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#metrics-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Prediction Plots */
+#prediction-plots {
+    margin-top: 20px;
+}
+
+#prediction-plots h3 {
+    margin: 10px 0;
+    font-size: 1.25rem;
+    color: #333;
+    text-align: center;
+}
+
+#prediction-plots img {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
 /* Responsive styling */
 @media (min-width: 768px) {
     #charts {
