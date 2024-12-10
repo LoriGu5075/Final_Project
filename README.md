@@ -2,9 +2,14 @@
 
 **Final Report: Analysis and Prediction of Stock Price Movements**
 
-******1. How to Build and Run the Code******
+# How to Build and Run the Code  
 
-**********************（你来写）
+1. Clone the repository:  
+   ```bash
+   git clone <REPOSITORY_URL>
+   cd <PROJECT_DIRECTORY>
+2. make install
+3. make run
 
 ******2. Visualizations of Data******
 
