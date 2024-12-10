@@ -36,8 +36,18 @@ In the midterm report, we employed a logistic regression model as a baseline, wh
 While simple and interpretable, it struggled to capture the non-linear relationships inherent in stock price movements.
 **Final Model:**
 We replaced logistic regression with a Random Forest Classifier, a more robust ensemble-based algorithm capable of handling non-linear patterns.
-After hyperparameter tuning and feature selection, the Random Forest model achieved ~65% accuracy, a significant improvement.
+After hyperparameter tuning and feature selection, the Random Forest model achieved ~57-58% accuracy, a significant improvement.
 Feature Engineering and Selection
+**Advantages of Random Forest:**
+Handles Non-linearity:
+Unlike Logistic Regression, which assumes linear relationships, Random Forest leverages decision trees to model complex, non-linear patterns.
+Feature Importance:
+Random Forest provides feature importance scores, helping us identify the most impactful indicators for prediction.
+Robustness to Noise:
+The ensemble nature of Random Forest mitigates the risk of overfitting by averaging across multiple decision trees.
+Versatility:
+Random Forest handles missing data and redundant features better than simpler models, making it ideal for our exploratory feature engineering phase.
+
 Compared to the midterm, we significantly expanded the feature set, introducing multiple new indicators:
 
 Log Returns: Mitigated the non-stationarity of raw price data, allowing the model to better identify trends.
@@ -53,7 +63,7 @@ This decision reduced computational complexity while retaining predictive power.
 
 **Model Performance**
 The Random Forest model achieved:
-Accuracy: ~65% on the test set, outperforming the midterm logistic regression model by 17%.
+Accuracy: ~58% on the test set, outperforming the midterm logistic regression model by ～10%.
 **Classification Report:**
 Precision and Recall for price increases (Target=1) improved significantly, showcasing the model's ability to capture upward price trends.
 Backtesting and Strategy Comparison
@@ -66,14 +76,14 @@ Buy-and-Hold Strategy: Holding the stock throughout the test period.
 
 ****Model Performance****
          Metric	            Midterm Logistic Regression	      Final Random Forest
-         Accuracy	                    ~48%	                           ~65%
-         Precision (1)	              ~50%	                           ~67%
-         Recall (1)	                 ~47%	                           ~64%
-         F1 Score (1)	              ~48%	                           ~65%
+         Accuracy	                    ~48%	                           ~58%
+         Precision (1)	              ~50%	                           ~58%
+         Recall (1)	                 ~47%	                           ~55%
+         F1 Score (1)	              ~48%	                           ~56%
 
 ****Key Observations:****
 
-**Improved Accuracy:** The Random Forest model achieved ~65% accuracy, a significant improvement over the ~48% baseline.
+**Improved Accuracy:** The Random Forest model achieved ~57-58% accuracy, a significant improvement over the ~48% baseline.
 **Enhanced Recall for Price Increases:** Improved recall for Target=1 (price increase) suggests the model is better at identifying upward trends, crucial for profitable buy signals.
 **Simplified Features:** Retaining only the most predictive indicators (MACD, RSI, K, D) allowed the model to balance complexity and interpretability.
 
@@ -95,7 +105,7 @@ The figure below compares cumulative returns for the prediction-based strategy a
 ******5. Conclusion******
 **Model Improvement:**
 
-Transitioned from Logistic Regression to Random Forest, achieving a significant accuracy boost (~17% improvement).
+Transitioned from Logistic Regression to Random Forest, achieving a significant accuracy boost (~10% improvement).
 Streamlined the feature set to include only MACD, RSI, and KDJ components, simplifying the model without sacrificing predictive power.
 Comprehensive Feature Exploration:
 
@@ -113,7 +123,7 @@ Buy-and-Hold is effective for supergiant companies, but our model's strategy out
 For smaller companies, the prediction-based strategy consistently captures opportunities missed by passive approaches.
 Strategic Application:
 
-While the model achieves a ~65% accuracy, its utility lies in generating actionable trading signals, especially in identifying short-term opportunities.
+While the model achieves a ~58% accuracy, its utility lies in generating actionable trading signals, especially in identifying short-term opportunities.
 
 ****In The Future...Maybe...****
 Expand testing to a broader range of stocks across different sectors to validate model generalizability.
