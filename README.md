@@ -1,4 +1,4 @@
-**video link:放新的demo**
+**[video DEMO link](https://drive.google.com/file/d/1HygFcnY82EluTzqGdmsqsonI6uRtdZVJ/view?usp=sharing)**
 
 **Final Report: Analysis and Prediction of Stock Price Movements**
 
